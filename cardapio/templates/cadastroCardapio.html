@@ -1,15 +1,26 @@
 {% extends 'dashboard.html' %}
 {% load crispy_forms_tags %}
 {% block conteudo %}
+<div class="row">
+    <div class="col-sm-6 col-md-12">
+      <div class="card card-tasks">
+        <div class="card-header ">
+          <h6 class="title d-inline">Cardapio</h6>
+        </div>
+        <div class="card-body ">
+            <form method="post">
 
-<form method="post">
-
-                    
-    {%csrf_token%}
-    {{formulario|crispy}}
+                                
+                {%csrf_token%}
+                {{formulario|crispy}}
 
 
- <button class="btn btn-primary" type="submit" style="margin-top: 2rem;">Salvar</button>
+            <button class="btn btn-primary" type="submit" style="margin-top: 2rem;">Salvar</button>
 
-</form> 
+            </form> 
+
+</div>
+</div>
+</div>
+</div>
 {% endblock %}

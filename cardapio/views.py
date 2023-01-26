@@ -42,8 +42,11 @@ def deleteCardapio(request,id):
 
 def search(request):
     results = []
+
     if request.method == "GET":
         query = request.GET.get('search')
+        if query == None:
+            query= " "
 
     results = Cardapio.objects.filter(nome__icontains=query)
     return render(request, "busca.html", {'query': query, 'results': results})
