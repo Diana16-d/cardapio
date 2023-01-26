@@ -1,0 +1,40 @@
+{% extends 'dashboard.html' %}
+{% block conteudo %}
+<div class="row">
+    <div class="col-sm-6 col-md-12">
+      <div class="card card-tasks">
+        <div class="card-header ">
+          <h6 class="title d-inline">Cardapio</h6>
+        </div>
+        <div class="card-body ">
+          <div class="table-full-width table-responsive">
+            <table class="table">
+                <thead>
+
+                    <tr>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        
+                        
+                    </tr>
+        
+                </thead>
+                {% for i in comidas %}
+              <tbody>
+               
+                <tr>
+                    <td> {{i.nome}}</td>
+                    <td> {{i.preco}}</td>
+                    <td><a href="{% url 'url_editar' i.id %}"> <i class="tim-icons icon-pencil"></i></a></td>
+                    <td><a href="{% url 'url_delete' i.id %}"> <i class="tim-icons icon-trash-simple"></i></a></td>
+        
+                </tr>
+              </tbody>
+              {% endfor %}
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
