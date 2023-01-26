@@ -6,6 +6,9 @@ from .models import Cardapio
 def index(request):
     return render(request, "dashboard.html")
 
+def sobre(request):
+    return render(request, "sobre.html")
+
 def cadastroCardapio(request):
     form = CardapioForm(request.POST or None)
     if form.is_valid() :
@@ -43,4 +46,4 @@ def search(request):
         query = request.GET.get('search')
 
     results = Cardapio.objects.filter(nome__icontains=query)
-    return render(request, "listaComidas.html", {'query': query, 'results': results})
+    return render(request, "busca.html", {'query': query, 'results': results})

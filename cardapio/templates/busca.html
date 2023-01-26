@@ -1,0 +1,62 @@
+{% extends 'dashboard.html' %}
+{% block conteudo %}
+<div class="card">
+    <div class="card-header">
+        <h5 class="title">Pesquisar comida</h5>
+    </div>
+    <div class="card-body">
+    <form action="{% url 'url_busca'%}" method="GET">
+    <div class="form-group">
+        <input type="text" autocomplete="off"  name="search" id="search" class="form-control" placeholder="Pesquisar comida..." />
+      </div>
+    </form>
+</div>
+</div>
+
+
+     
+
+<div class="row">
+    <div class="col-sm-6 col-md-12">
+      <div class="card card-tasks">
+        <div class="card-header ">
+          <h6 class="title d-inline">Cardapio</h6>
+        </div>
+        <div class="card-body ">
+          <div class="table-full-width table-responsive">
+            {% if query %}
+            {% if results %}
+            <table class="table">
+                <thead>
+
+                    <tr>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        
+                        
+                    </tr>
+        
+                </thead>
+                {% for i in results %}
+              <tbody>
+               
+                <tr>
+                    <td> {{i.nome}}</td>
+                    <td> {{i.preco}}</td>
+                    <td><a href="{% url 'url_editar' i.id %}"> <i class="tim-icons icon-pencil"></i></a></td>
+                    <td><a href="{% url 'url_delete' i.id %}"> <i class="tim-icons icon-trash-simple"></i></a></td>
+        
+                </tr>
+              </tbody>
+              {% endfor %}
+            </table>
+            {% else %}
+      <h4> 0 registros </h4>
+            {% endif %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

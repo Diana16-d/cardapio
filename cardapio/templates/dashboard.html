@@ -32,32 +32,32 @@
           <a href="javascript:void(0)" class="simple-text logo-mini">
             
           </a>
-          <a href="javascript:void(0)" class="simple-text logo-normal">
+          <a href="{% url 'url_index' %}" class="simple-text logo-normal">
             Cardapio
           </a>
         </div>
         <ul class="nav">
           <li class="active ">
             <a href="{% url 'url_cadastro' %}">
-              <i class="tim-icons icon-chart-pie-36"></i>
+              <i class="tim-icons icon-pin"></i>
               <p>CRUD</p>
             </a>
           </li>
           <li>
             <a href="{% url 'url_listagem' %}">
-              <i class="tim-icons icon-atom"></i>
-              <p>lISTAGEM</p>
+              <i class="tim-icons icon-align-center"></i>
+              <p>LISTAGEM</p>
             </a>
           </li>
           <li>
-            <a href="{% url 'url_cadastro' %}">
-              <i class="tim-icons icon-pin"></i>
+            <a href="{% url 'url_busca' %}">
+              <i class="tim-icons icon-zoom-split"></i>
               <p>BUSCA</p>
             </a>
           </li>
           <li>
-            <a href="{% url 'url_cadastro' %}">
-              <i class="tim-icons icon-bell-55"></i>
+            <a href="{% url 'url_sobre' %}">
+              <i class="tim-icons icon-badge"></i>
               <p>SOBRE</p>
             </a>
           </li>

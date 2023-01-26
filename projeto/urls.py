@@ -25,5 +25,7 @@ urlpatterns = [
     path('cadastroCardapio', views.cadastroCardapio, name="url_cadastro"), 
     path('cardapioLista', views.listagemCardapio, name="url_listagem"), 
     path('editar/<int:id>', views.editarCardapio, name="url_editar"), 
-    path('delete/<int:id>', views.deleteCardapio, name="url_delete"),  
+    path('delete/<int:id>', views.deleteCardapio, name="url_delete"), 
+    path('sobre/', views.sobre, name="url_sobre"),  
+    path('busca/', views.search, name="url_busca"),  
 ]
