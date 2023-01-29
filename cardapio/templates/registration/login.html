@@ -1,0 +1,26 @@
+{% extends 'dashboard.html' %}
+{% block conteudo %}
+{% load crispy_forms_tags %}
+<div class="row">
+    <div class="col-sm-6 col-md-12">
+      <div class="card card-tasks">
+        <div class="card-header ">
+          <h6 class="title d-inline">Cardapio</h6>
+        </div>
+        <div class="card-body ">
+            <form action="." method="post">
+                <div class="row">
+                  <div class="form-group col-md-12 mb-4">
+                     {% csrf_token %}
+                     {{ form.as_p }}
+                  </div>
+                  <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary btn-pill mb-4">Entrar</button>
+                  </div>
+                </div>
+              </form>
+        </div>
+     </div>
+    </div>
+</div>
+{% endblock %}

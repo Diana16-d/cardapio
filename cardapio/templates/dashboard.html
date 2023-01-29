@@ -37,12 +37,22 @@
           </a>
         </div>
         <ul class="nav">
+          {% if user.is_authenticated %}
           <li class="active ">
             <a href="{% url 'url_cadastro' %}">
               <i class="tim-icons icon-pin"></i>
               <p>CRUD</p>
             </a>
           </li>
+          {% else %}
+           <li>
+            <a href="{% url 'login' %}">
+              <i class="tim-icons icon-badge"></i>
+              <p>LOGIN</p>
+            </a>
+          </li>
+          {% endif %}
+
           <li>
             <a href="{% url 'url_listagem' %}">
               <i class="tim-icons icon-align-center"></i>
@@ -61,6 +71,7 @@
               <p>SOBRE</p>
             </a>
           </li>
+         
         </ul>
       </div>
     </div>
@@ -76,7 +87,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:void(0)">Dashboard</a>
+            <a class="navbar-brand" href="javascript:void(0)">Cardapio</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -85,7 +96,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav ml-auto">
-              
+             
               <li class="dropdown nav-item">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <div class="photo">
@@ -93,14 +104,15 @@
                   </div>
                   <b class="caret d-none d-lg-block d-xl-block"></b>
                   <p class="d-lg-none">
-                    Log out
+                    
                   </p>
-                </a>
+                </a> {% if user.is_authenticated %}
                 <ul class="dropdown-menu dropdown-navbar">
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Sair</a></li>
+                  <li class="nav-link"><a href="{% url 'logout' %}" class="nav-item dropdown-item">Sair</a></li>
                   </ul>
               </li>
               <li class="separator d-lg-none"></li>
+              {% endif %}
             </ul>
           </div>
         </div>
